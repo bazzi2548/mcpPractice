@@ -21,7 +21,7 @@ public class GPTService {
 		.connectTimeout(20, TimeUnit.SECONDS)
 		.writeTimeout(20, TimeUnit.SECONDS)
 		.readTimeout(60, TimeUnit.SECONDS) // 가장 중요!
-		.build();;
+		.build();
 	private final ObjectMapper mapper = new ObjectMapper();
 	private static final String URL = "https://api.openai.com/v1/responses";
 
@@ -43,7 +43,7 @@ public class GPTService {
 		);
 
 		Request request = new Request.Builder()
-			.url("https://api.openai.com/v1/responses")
+			.url(URL)
 			.header("Authorization", "Bearer " + apiKey)
 			.post(body)
 			.build();
